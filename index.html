@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Hungry Squirrel</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <script language="javascript" type="text/javascript" src="jquery-1.10.2.js"></script>
+        <script language="javascript" type="text/javascript" src="jquery-ui.js"></script>
+        <script language="javascript" type="text/javascript" src="jquery-ui1.js"></script>
+        <script language="javascript" type="text/javascript" src="main.js"></script>
+
+    </head>
+    
+    <body>
+        <div id='background'>
+            <div id='HARD'><span></span></div>
+            <h1 class='nameGame'>HUNGRY SQUIRREL </h1>
+            <div id='menu'><span></span></div>
+            <div id='EASY'><span>BACK</span></div>
+
+            
+            <a href="index.html"><div id='delButton'><span style="color: #000;">MAIN MENU</span></div></a>
+            <form id='insert' autocomplete='off' maxlength="1">
+                <input id='insertLetter' type="text" name="letter" class="display" maxlength="1" autocomplete="off"
+/>
+                
+                <div id='result'>
+                    <table id='table_headers'>
+                        <tr id='fieldWord'><!-- <td class='position' id = 'positionZ'><span id='numbers'>!</span></td> --></tr>
+                    </table>
+                </div>
+            </form>
+            <!-- <div id='nutContainer'> -->
+                <div class='nutHolder' id='nuts'>
+                    <div class='nut' id='pic1'></div>
+                    <div class='nut' id='pic2'></div>
+                    <div class='nut' id='pic3'></div>
+                    <div class='nut' id='pic4'></div>
+                    <div class='nut' id='pic5'></div>
+                    <div class='nut' id='pic6'></div>
+                    <div class='nut' id='pic7'></div>
+                    <div class='nut' id='pic8'></div>
+                </div>
+            <!-- </div> -->
+            <div id='guessedLetters'><div class="lett" id ="lett">!</div></div>
+            <b><div class='letterHolder' id='keyboard'>
+                <div onclick="addLetter('Q');changeColor(this)" class='keyletter' id='letterQ'>Q</div>
+                <div onclick="addLetter('W');changeColor(this)" class='keyletter' id='letterW'>W</div>
+                <div onclick="addLetter('E');changeColor(this)" class='keyletter' id='letterE'>E</div>
+                <div onclick="addLetter('R');changeColor(this)" class='keyletter' id='letterR'>R</div>
+                <div onclick="addLetter('T');changeColor(this)" class='keyletter' id='letterT'>T</div>
+                <div onclick="addLetter('Y');changeColor(this)" class='keyletter' id='letterY'>Y</div>
+                <div onclick="addLetter('U');changeColor(this)" class='keyletter' id='letterU'>U</div>
+                <div onclick="addLetter('I');changeColor(this)" class='keyletter' id='letterI'>I</div>
+                <div onclick="addLetter('O');changeColor(this)" class='keyletter' id='letterO'>O</div>
+                <div onclick="addLetter('P');changeColor(this)" class='keyletter' id='letterP'>P</div>
+                <div onclick="addLetter('A');changeColor(this)" class='keyletter' id='letterA'>A</div>
+                <div onclick="addLetter('S');changeColor(this)" class='keyletter' id='letterS'>S</div>
+                <div onclick="addLetter('D');changeColor(this)" class='keyletter' id='letterD'>D</div>
+                <div onclick="addLetter('F');changeColor(this)" class='keyletter' id='letterF'>F</div>
+                <div onclick="addLetter('G');changeColor(this)" class='keyletter' id='letterG'>G</div>
+                <div onclick="addLetter('H');changeColor(this)" class='keyletter' id='letterH'>H</div>
+                <div onclick="addLetter('J');changeColor(this)" class='keyletter' id='letterJ'>J</div>
+                <div onclick="addLetter('K');changeColor(this)" class='keyletter' id='letterK'>K</div>
+                <div onclick="addLetter('L');changeColor(this)" class='keyletter' id='letterL'>L</div>
+                <div onclick="addLetter('Z');changeColor(this)" class='keyletter' id='letterZ'>Z</div>
+                <div onclick="addLetter('X');changeColor(this)" class='keyletter' id='letterX'>X</div>
+                <div onclick="addLetter('C');changeColor(this)" class='keyletter' id='letterC'>C</div>
+                <div onclick="addLetter('V');changeColor(this)" class='keyletter' id='letterV'>V</div>
+                <div onclick="addLetter('B');changeColor(this)" class='keyletter' id='letterB'>B</div>
+                <div onclick="addLetter('N');changeColor(this)" class='keyletter' id='letterN'>N</div>
+                <div onclick="addLetter('M');changeColor(this)" class='keyletter' id='letterM'>M</div>
+                <div class='keyletter' id='add'>OK</div>
+                
+            </div></b>
+
+            <div id='squirrel'></div><div id='angry'></div>
+        </div>
+        <a href="index.html">
+        <div id="loser">
+            <h1 id='mess'></h1>
+            <div class='category_divs'>
+                <a href="index.html" style="text-decoration:none;">
+                <div id='back_to_menu_loser' class='buttons category_buttons'>BACK TO MENU</div>
+                </a>
+            </div>
+            <div class='category_divs'>
+                <div id='play_again_loser' class='buttons category_buttons play_again'>PLAY AGAIN</div>
+            </div>
+        </div></a>
+        
+        <div id="winner">
+            <div class='category_divs'>
+                <a href="index.html" style="text-decoration:none;">
+                <div id='back_to_menu_winner' class='buttons category_buttons'>BACK TO MENU</div>
+                </a>
+            </div>
+            <div class='category_divs'>
+                <div id='play_again_winner' class='buttons category_buttons play_again'>PLAY AGAIN</div>
+            </div>
+        </div>
+        <div id="general_window" class="start_window">
+            <h1 id="nameGameStart" class='nameGame'>HUNGRY SQUIRREL</h1>
+            <div id='start_button' class='buttons'>START</div>
+            <div id='help_button' class='buttons'>HELP</div>
+            <div id='options_button' class='buttons'>OPTIONS</div>
+            <div id='exit_button' class='buttons'>EXIT</div>
+        </div>
+        <div class="start_window" id='categories'>
+            <h1 id="nameGameStart" class='nameGame'>HUNGRY SQUIRREL</h1>
+            <h1 id="categories_name" class='nameGame'>CHOOSE WORD CATEGORY:</h1>
+            <div class='category_divs'>
+                <div id='countries' class='buttons category_buttons'>COUNTRIES</div>
+                <div id='cities' class='buttons category_buttons'>CITIES</div>
+            </div>
+            <div class='category_divs'>
+                <div id='names' class='buttons category_buttons'>FAMOUS PEOPLE</div>
+                <div id='random' class='buttons category_buttons'>RANDOM</div>
+            </div>
+                <div id='back_to_menu_categories' class='buttons category_buttons'>BACK TO MENU</div>
+        </div>
+        <div class='start_window' id="help_window">
+            <h1 id="nameGameStart" class='nameGame'>HUNGRY SQUIRREL</h1>
+            <div id="help_text" class='nameGame'><b><i>'Hungry squirrel' is a game about the squirrel from the 'Ice Age' movie which collects some nuts for the winter. There are different categories of words that you should guess to help him. The game picks a word. When you choose the right letter, you save his food supplies. Be careful not to make mistakes, because for each of them a nut will blow up. You will surely upset your squirrel. In case you have ran out of nuts, you have lost. And we all know what are the consequences when the squirrel loses his nut. So, let's prevent the world from another Ice Age!</i></b></div>
+            <div class='category_divs'>
+                <div id='back_to_menu' class='buttons category_buttons'>BACK</div>
+            </div>
+            <div class='category_divs'>
+                <div id='start_button_help' class='buttons category_buttons'>START</div>
+            </div>
+        </div>
+        <div id="options_window" class="start_window">
+            <h1 id="nameGameStart" class='nameGame'>HUNGRY SQUIRREL</h1>
+            <h1 id="level" class='nameGame'>CHOOSE LEVEL:</h1>
+            <div class='category_divs'>
+                <div id='hard_button' class='buttons category_buttons'>HARD</div>
+            </div>
+            <div class='category_divs'>
+                <div id='easy_button' class='buttons category_buttons'>EASY</div>
+            </div>
+            <h1 id="language" class='nameGame'>CHOOSE LANGUAGE:</h1>
+            <div class='category_divs'>
+                <a href="index.html" style="text-decoration:none;">
+                    <div id='english' class='buttons category_buttons'>ENGLISH</div>
+                </a>
+            </div>
+             <div class='category_divs'>
+                <a href="bg/index.html" style="text-decoration:none;">
+                    <div id='bulgarian' class='buttons category_buttons'>BULGARIAN</div>
+                </a>
+            </div>
+            <div id='back_to_menu_options' class='buttons category_buttons'>BACK TO MENU</div>
+        </div>
+    </body>
+
+</html>
+
+
+
+
